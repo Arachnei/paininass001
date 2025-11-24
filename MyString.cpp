@@ -280,6 +280,8 @@ namespace cs_mystring {
     in.getline(temp, MyString::MAX_INPUT_SIZE, ' ');
     target = MyString(temp);
 
+    std::cout << "Length of temp:" << strlen(temp);
+
         return in;
     }
 

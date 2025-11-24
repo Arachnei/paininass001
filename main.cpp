@@ -1,5 +1,5 @@
-/*
- * These functions are designed to help you test your MyString objects,
+/* 
+ * These functions are designed to help you test your MyString objects, 
  * as well as show the client usage of the class.
  *
  * The BasicTest function builds an array of strings using various
@@ -20,7 +20,7 @@
  * easier to comment out functions you are ready for, so that you don't
  * get lots of compile/link complaints.
 */
-
+ 
 #include "MyString.h"
 #include <cctype>      // for toupper()
 #include <iostream>
@@ -49,11 +49,11 @@ void BasicTest()
 {
     MyString s;
     cout << "----- Testing basic String creation & printing" << endl;
-
-    const MyString strs[] =
+    
+    const MyString strs[] = 
                 {MyString("Wow"), MyString("C++ is neat!"),
                  MyString(""), MyString("a-z")};
-
+                         
     for (int i = 0; i < 4; i++){
         cout << "string [" << i <<"] = " << strs[i] << endl;
     }
@@ -95,8 +95,8 @@ void RelationTest()
 {
     cout << "\n----- Testing relational operators between MyStrings\n";
 
-    const MyString strs[] =
-        {MyString("app"), MyString("apple"), MyString(""),
+    const MyString strs[] = 
+        {MyString("app"), MyString("apple"), MyString(""), 
         MyString("Banana"), MyString("Banana")};
 
     for (int i = 0; i < 4; i++) {
@@ -108,7 +108,7 @@ void RelationTest()
         cout << "    Does left == right? " << boolString(strs[i] == strs[i+1]) << endl;
         cout << "    Does left != right ? " << boolString(strs[i] != strs[i+1]) << endl;
     }
-
+ 
     cout << "\n----- Testing relations between MyStrings and char *\n";
     MyString s("he");
     const char *t = "hello";
@@ -119,7 +119,7 @@ void RelationTest()
     cout << "    Is left >= right? " << boolString(s >= t) << endl;
     cout << "    Does left == right? " << boolString(s == t) << endl;
     cout << "    Does left != right ? " << boolString(s != t) << endl;
-
+    
     MyString u("wackity");
     const char *v = "why";
     cout << "Comparing " << v << " to " << u << endl;
@@ -128,7 +128,7 @@ void RelationTest()
     cout << "    Is left > right? " << boolString(v > u) << endl;
     cout << "    Is left >= right? " << boolString(v >= u) << endl;
     cout << "    Does left == right? " << boolString(v == u) << endl;
-    cout << "    Does left != right ? " << boolString(v != u) << endl;
+    cout << "    Does left != right ? " << boolString(v != u) << endl;  
 }
 
 
@@ -150,22 +150,22 @@ void CopyTest()
     cout << "\n----- Testing copy constructor and operator= on MyStrings\n";
 
     MyString orig("cake");
-
+    
     MyString copy(orig);    // invoke copy constructor
 
     copy[0] = 'f';  // change first letter of the *copy*
     cout << "original is " << orig << ", copy is " << copy << endl;
-
+    
     MyString copy2;      // makes an empty string
-
+    
     copy2 = orig;        // invoke operator=
     copy2[0] = 'f';      // change first letter of the *copy*
     cout << "original is " << orig << ", copy is " << copy2 << endl;
-
+    
     copy2 = "Copy Cat";
     copy2 = copy2;        // copy onto self and see what happens
     cout << "after self assignment, copy is " << copy2 << endl;
-
+    
     cout << "Testing pass & return MyStrings by value and ref" << endl;
     MyString val = "winky";
     MyString sum = AppendTest("Boo", val);
@@ -173,4 +173,8 @@ void CopyTest()
     cout << "val is " << val << endl;
     val = sum;
     cout << "after assign,  val is " << val << endl;
+
+    char testChar[] = { 'T', 'e', 's', 't', '\0' };
+    MyString charArrayString(testChar);
+    cout << "MyString constructed from char array: " << charArrayString << endl;
 }
