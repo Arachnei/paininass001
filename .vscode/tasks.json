@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build C++ project",
+			"type": "shell",
+			"command": "g++ -std=c++17 -Wall -Wextra -o main.exe main.cpp MyString.cpp",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		}
+	]
+}
