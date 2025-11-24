@@ -276,14 +276,9 @@ namespace cs_mystring {
             in.ignore();
         }
 
-        /*char* temp[MyString::MAX_INPUT_SIZE + 1];
-        delete [] target.returnMyeowString();
-        target.returnMyeowString() = new char[strlen(temp&) + 1];
-        strcpy(target.returnMyeowString(), temp&);*/
-
-        char temp[MyString::MAX_INPUT_SIZE + 1];
-        in.getline(temp, MyString::MAX_INPUT_SIZE, ' ');
-        target = temp;
+    char temp[MyString::MAX_INPUT_SIZE + 1];
+    in.getline(temp, MyString::MAX_INPUT_SIZE, ' ');
+    target = MyString(temp);
 
         return in;
     }
